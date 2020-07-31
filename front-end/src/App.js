@@ -48,7 +48,9 @@ class App extends Component {
     return (
       <div>
         <header>
-          <nav></nav>
+          <nav>
+            <h1>Life's A Sport - Drink It Up!</h1>
+          </nav>
         </header>
         <main>
         
