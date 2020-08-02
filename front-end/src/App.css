@@ -3,47 +3,71 @@
   /* background-color: black; */
 }
 
-/* .list {
+main {
   display: grid;
-  
-} */
+  grid-template-columns: auto;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+}
+
+.list {
+  margin: 0px 80px;
+}
 
 .button-class {
   display: flex;
   flex-direction: row;
-
 }
 
-button {
+button a {
   height: 30px;
   width: fit-content;
 }
+.close{
+  right: 75%;
+  width: 10px;
+}
 
+div {
+  font-size: 25px;
+  display: grid;
+}
 
 .container {
   display: inline-block;
   flex-direction: row;
   /* width: 50px; */
-  margin: 0px 4px 40px 40px;
+  margin: 20px 60px 0px 60px;
   padding: 40px 100px;
-  align-content: flex-end;
+  align-items: center;
 }
 
 .box {
-  background-image: linear-gradient(to right, red,orange,yellow,green,blue,indigo,violet);
-  opacity: 0.8;
+  background-image: linear-gradient(
+    to right,
+    red,
+    orange,
+    yellow,
+    green,
+    blue,
+    indigo,
+    violet
+  );
   color: black;
+  margin: 10px 70px;
   font-weight: bold;
-  padding: 0px 20px;
-  height: 40px;
+  padding: 0px 60px;
+  height: 80px;
+  display: flex;
+  justify-content: flex-end;
 }
 
 header {
-  color: orange;
+  color: #0074d9;
   text-align: center;
 }
 
 img {
-  height: 200px;
-  width: 200px;
+  height: 300px;
+  width: 300px;
+  padding: 25px;
 }
