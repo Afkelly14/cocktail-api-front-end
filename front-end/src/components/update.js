@@ -50,24 +50,25 @@ class Update extends Component {
       console.dir(e.target[0].value);
       console.dir(e.target[2].value);
       console.log(this.props.match.params.name);
-      const body = {
-        strInstructions: e.target[0].value,
-        strDrinkThumb: e.target[2].value,
-      }; 
-    // const optionPUT = {
-    //   method: "PUT",
-    //   headers: {
-    //     Accept: "application/json",
-    //   },
-    //   body: JSON.stringify(this.state),
-    // };
-    // fetch(url + "/name/" + strDrink, optionPUT)
-    //   .then(() => {
-    //     console.log("updated");
-    //   })
-    //   .catch((err) => {
-    //     console.log(err);
-    //   });
+      console.log(url + "/name/" + this.props.match.params.name)
+      const formData = new FormData(); 
+      formData.append("strInstructions", e.target[0].value);
+      formData.append("strDrinkThumb", e.target[2].value)
+    
+    const optionPUT = {
+      method: "PUT",
+      headers: {
+        Accept: "application/json",
+      },
+      body: (formData),
+    };
+    fetch(url + "/name/" + this.props.match.params.name, optionPUT)
+      .then(() => {
+        console.log("updated");
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   } //update
 } //component
 
