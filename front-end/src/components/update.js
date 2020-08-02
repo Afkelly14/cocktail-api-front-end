@@ -43,14 +43,9 @@ class Update extends Component {
         "strInstructions": document.querySelector("input").value,
 
     }
-
-    // formData.append("strInstructions", e.target[0].value);
-    // formData.append("strDrinkThumb", e.target[2].value);
    
     console.log(formData);
-    // const data = {
-    //     "strInstructions": "just work for me"
-    // }
+   
     const optionPUT = {
       "method": "PUT",
       "headers": {

@@ -42,13 +42,12 @@ class Drinks extends Component {
       });
   } //componentWillMount
   render() {
+    let list = this.state.data.map(item => {
+   
     return (
-      <div>
-        <form>
-          <input type="text" onChange={this.searchName}></input>
-        </form>
+      <div className = "container">
         <Modal />
-        {this.state.data.map((item) => (
+        
           <>
             <div key={item}>{item.strDrink}</div>
             <img src={item.strDrinkThumb} />
@@ -79,9 +78,11 @@ class Drinks extends Component {
             </Button>{" "}
             </Link>
           </>
-        ))}
+       
       </div>
     ); //return
+  })//map
+return <div className="list">{list}</div>
   } //render
 
   searchName = (e) => {

@@ -46,7 +46,7 @@ class App extends Component {
       ingredient: String,
       search: "words",
     };
-    // this.setPage = this.setPage.bind(this);
+    
   }
   render() {
     return (
@@ -61,11 +61,6 @@ class App extends Component {
           <Route path="/drinks/update/:name" render={(routerProps) => (
             <Update {...routerProps}></Update>
           )} />
-
-          {/* <p>{this.state.name}</p> */}
-          {/* <form>
-            <input type="text" placeholder="search drink" onInput={this.searchName}/>
-            </form> */}
         </main>
       </div>
     ); //return

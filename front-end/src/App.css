@@ -1,11 +1,42 @@
-
-img {
-  height: 300px;
-  width: 300px;
+* {
+  border: 1px red solid;
+  /* background-color: black; */
 }
 
-button {
-  height: 40px;
-  font-size: 10px;
+/* .list {
+  display: grid;
+  
+} */
 
+button {
+  height: 30px;
+  width: fit-content;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  /* width: 50px; */
+  margin: 0px 4px 40px 40px;
+  padding: 40px 100px 40px 100px;
+  align-content: flex-end;
+}
+
+.box {
+  background-color: red;
+  opacity: 0.8;
+  color: black;
+  font-weight: bold;
+  padding: 40px 100px 40px 100px;
+  width: 250px;
+}
+
+header {
+  color: orange;
+  text-align: center;
+}
+
+img {
+  height: 200px;
+  width: 200px;
 }

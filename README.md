@@ -10,11 +10,11 @@ the ability to search by ID, name, ingredient and the type of glass. We will als
 
 ## Routes
 
-- Name
+- Name: find a drink by its specified name. Route is (/)
 - Edit
 
 ## Issues
 
-- linking the API to webpage
-- using bootstrap
-- getting the update to work
+- Linking the API to webpage
+- Using bootstrap, did not use
+- Having the update functionality to work. Would update in the console and not the API. This was fixed in the PUT method by adding "Content-Type" under Headers in the method
