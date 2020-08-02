@@ -8,27 +8,34 @@
   
 } */
 
+.button-class {
+  display: flex;
+  flex-direction: row;
+
+}
+
 button {
   height: 30px;
   width: fit-content;
 }
 
+
 .container {
-  display: flex;
-  flex-direction: column;
+  display: inline-block;
+  flex-direction: row;
   /* width: 50px; */
   margin: 0px 4px 40px 40px;
-  padding: 40px 100px 40px 100px;
+  padding: 40px 100px;
   align-content: flex-end;
 }
 
 .box {
-  background-color: red;
+  background-image: linear-gradient(to right, red,orange,yellow,green,blue,indigo,violet);
   opacity: 0.8;
   color: black;
   font-weight: bold;
-  padding: 40px 100px 40px 100px;
-  width: 250px;
+  padding: 0px 20px;
+  height: 40px;
 }
 
 header {

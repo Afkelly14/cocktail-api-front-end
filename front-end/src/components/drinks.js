@@ -46,11 +46,12 @@ class Drinks extends Component {
    
     return (
       <div className = "container">
-        <Modal />
+       
         
           <>
             <div key={item}>{item.strDrink}</div>
             <img src={item.strDrinkThumb} />
+            <div className="button-class">
             <Button
               variant="danger"
               onClick={(e) => {
@@ -76,14 +77,22 @@ class Drinks extends Component {
             >
               UPDATE
             </Button>{" "}
+            
             </Link>
+            </div>
           </>
-       
+          
       </div>
     ); //return
   })//map
-return <div className="list">{list}</div>
-  } //render
+return (
+(<React.Fragment>
+<Modal />
+<div className="list">{list}</div>
+</React.Fragment>
+)  
+)
+} //render
 
   searchName = (e) => {
     e.preventDefault();
