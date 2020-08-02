@@ -14,13 +14,20 @@ const optionGET = {
   },
 };
 
+const optionDELETE = {
+  method: "DELETE",
+  headers: {
+    Accept: "application/json",
+  },
+};
+
 class Drinks extends Component {
   constructor() {
     super();
     this.state = {
       data: [],
       search: "",
-      clicked: true
+      clicked: true,
     }; //state
   } //constructor
 
@@ -38,15 +45,28 @@ class Drinks extends Component {
       <div>
         <form>
           <input type="text" onChange={this.searchName}></input>
-         
         </form>
-        <Modal/>
+        <Modal />
         {this.state.data.map((item) => (
           <>
-            <div key={item} >{item.strDrink}</div>
+            <div key={item}>{item.strDrink}</div>
             <img src={item.strDrinkThumb} />
-            <Button variant="primary">INFO</Button>{" "}
-            <Button variant="danger" onClick= {e => {this.showModal(item.strInstructions)}}>INSTRUCTIONS</Button>{" "}
+            <Button
+              variant="danger"
+              onClick={(e) => {
+                this.remove(item.strDrink);
+              }}
+            >
+              Delete
+            </Button>{" "}
+            <Button
+              variant="info"
+              onClick={(e) => {
+                this.showModal(item.strInstructions);
+              }}
+            >
+              INSTRUCTIONS
+            </Button>{" "}
           </>
         ))}
       </div>
@@ -62,14 +82,27 @@ class Drinks extends Component {
     );
   }; //searchName
 
-showModal = (e) => {
-console.dir(e)
-let info = this.state.data.strInstructions
-document.querySelector('.instructions').innerHTML = e;
-document.querySelector('.box').style.opacity = .75;
-this.setState({clicked: !this.state.clicked})
-}
+  showModal = (e) => {
+    console.dir(e);
+    let info = this.state.data.strInstructions;
+    document.querySelector(".instructions").innerHTML = e;
+    document.querySelector(".box").style.opacity = 0.75;
+    this.setState({ clicked: !this.state.clicked });
+  };//showModal
 
+  remove(strDrink) {
+    fetch(url + "/" + strDrink, optionDELETE)
+      .then(() => {
+        console.log("removed");
+        this.setState({ data: this.state.data.filter(item => {
+        return item.strDrink !== strDrink
+      })})
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+      
+  }//remove
 } //component
 
 export default Drinks;
