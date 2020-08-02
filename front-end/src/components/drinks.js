@@ -65,9 +65,11 @@ class Drinks extends Component {
 showModal = (e) => {
 console.dir(e)
 let info = this.state.data.strInstructions
-document.querySelector('.pop-up').innerHTML = e;
+document.querySelector('.instructions').innerHTML = e;
+document.querySelector('.box').style.opacity = .75;
 this.setState({clicked: !this.state.clicked})
 }
+
 } //component
 
 export default Drinks;
