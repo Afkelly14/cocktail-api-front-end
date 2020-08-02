@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import App from "../App";
 import Modal from "./Modal";
+import { Link } from "react-router-dom";
 
 import Button from "react-bootstrap/Button";
 
@@ -57,7 +58,7 @@ class Drinks extends Component {
                 this.remove(item.strDrink);
               }}
             >
-              Delete
+              DELETE
             </Button>{" "}
             <Button
               variant="info"
@@ -67,6 +68,16 @@ class Drinks extends Component {
             >
               INSTRUCTIONS
             </Button>{" "}
+            <Link to={"/drinks/update/" + item.strDrink}>
+            <Button
+              variant="outline-secondary"
+              onClick={(e) => {
+                this.update(item);
+              }}
+            >
+              UPDATE
+            </Button>{" "}
+            </Link>
           </>
         ))}
       </div>
@@ -103,6 +114,10 @@ class Drinks extends Component {
       });
       
   }//remove
-} //component
+
+  update(item) {
+    console.log("update works");
+  }
+ } //component
 
 export default Drinks;
