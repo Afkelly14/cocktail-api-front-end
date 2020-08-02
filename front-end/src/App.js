@@ -1,5 +1,8 @@
 import React, { Component } from "react";
+import { Route, Link, Switch } from "react-router-dom";
 import "./App.css";
+import Drinks from "./components/drinks";
+import Update from "./components/update";
 
 //link the API from heroku
 let url = "https://find-a-cocktail.herokuapp.com/drinks";
@@ -37,10 +40,11 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      id: "",
-      glass: "",
-      name: "",
-      ingredients: "",
+      id: String,
+      glass: String,
+      name: String,
+      ingredient: String,
+      search: "words",
     };
     // this.setPage = this.setPage.bind(this);
   }
@@ -53,10 +57,15 @@ class App extends Component {
           </nav>
         </header>
         <main>
-        
-        <p>{this.state.name}</p>
-        <button onClick={this.newName}>show another drink</button>
-       
+          <Route path="/drinks/" exact component={Drinks} />
+          <Route path="/drinks/update/:name" render={(routerProps) => (
+            <Update {...routerProps}></Update>
+          )} />
+
+          {/* <p>{this.state.name}</p> */}
+          {/* <form>
+            <input type="text" placeholder="search drink" onInput={this.searchName}/>
+            </form> */}
         </main>
       </div>
     ); //return
@@ -65,32 +74,19 @@ class App extends Component {
   // //componentDidMount runs every time the page is loaded
   componentDidMount() {
     //fetch request to the API
-    fetch(url, optionGET)
+    fetch(url, optionGET, optionDELETE)
       //converting the API to readable code. Naming it convertedResponse
       .then((res) => res.json())
       .then((convertedResponse) => {
         //console.log to see if it works
         console.log(convertedResponse);
-        //setting State to fetch a new cocktail name each time the page is loaded. It was empty when defined earlier.
-        // this.setState({
-        //   name: convertedResponse.name,
-        // });
-      });
-  }
-
-  newName = () => {
-    fetch(url, optionGET)
-      //converting the API to readable code. Naming it convertedResponse
-      .then((res) => res.json())
-      .then((convertedResponse) => {
-        //console.log to see if it works
-        console.log(convertedResponse.name);
-        //setting State to fetch a new joke each time the page is loaded. It was empty when defined earlier.
+        console.log(convertedResponse[0].strDrink);
+        // setting State to fetch a new cocktail name each time the page is loaded. It was empty when defined earlier.
         this.setState({
-          name: convertedResponse.name,
+          name: convertedResponse[0].strDrink,
         });
       });
-  };
+  }
 } //component
 
 export default App;
