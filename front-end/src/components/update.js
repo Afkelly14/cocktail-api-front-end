@@ -23,18 +23,7 @@ class Update extends Component {
             id="instructions"
             placeholder="update instructions"
           ></input>
-          
-          <input
-            type="submit"
-            id="submit"
-            placeholder="submit changes here"
-          ></input>
-          <br />
-          <input
-            type="text"
-            id="image"
-            placeholder="update drink image"
-          ></input>
+
           <input
             type="submit"
             id="submit"
@@ -46,30 +35,38 @@ class Update extends Component {
   } //render
 
   update = (e) => {
-      e.preventDefault();
-      console.dir(e.target[0].value);
-      console.dir(e.target[2].value);
-      console.log(this.props.match.params.name);
-      console.log(url + "/name/" + this.props.match.params.name)
-      const formData = new FormData(); 
-      formData.append("strInstructions", e.target[0].value);
-      formData.append("strDrinkThumb", e.target[2].value)
-    
+    e.preventDefault();
+    console.dir(e.target[0].value);
+    console.dir(e.target[2].value);
+    console.log(this.props.match.params.name);
+    console.log(url + "/name/" + this.props.match.params.name);
+    const formData = {
+        "strInstructions": document.querySelector("input").value,
+
+    }
+
+    // formData.append("strInstructions", e.target[0].value);
+    // formData.append("strDrinkThumb", e.target[2].value);
+   
+    console.log(formData);
+    // const data = {
+    //     "strInstructions": "just work for me"
+    // }
     const optionPUT = {
-      method: "PUT",
-      headers: {
-        Accept: "application/json",
+      "method": "PUT",
+      "headers": {
+        "Content-Type": "application/json",
       },
-      body: (formData),
+      body: JSON.stringify(formData),
     };
-    fetch(url + "/name/" + this.props.match.params.name, optionPUT)
-      .then(() => {
-        console.log("updated");
-      })
+    fetch(url + "/name/edit/" + this.props.match.params.name, optionPUT)
+      .then((res)=> res.json())
+      .then((data) =>
+      console.log(data))
       .catch((err) => {
         console.log(err);
       });
-  } //update
+  }; //update
 } //component
 
 export default Update;
