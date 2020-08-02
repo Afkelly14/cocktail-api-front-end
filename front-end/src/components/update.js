@@ -37,7 +37,6 @@ class Update extends Component {
   update = (e) => {
     e.preventDefault();
     console.dir(e.target[0].value);
-    console.dir(e.target[2].value);
     console.log(this.props.match.params.name);
     console.log(url + "/name/" + this.props.match.params.name);
     const formData = {
