@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import App from "../App";
+import Modal from "./Modal";
 
 import Button from "react-bootstrap/Button";
 
@@ -18,6 +19,8 @@ class Drinks extends Component {
     super();
     this.state = {
       data: [],
+      search: "",
+      clicked: true
     }; //state
   } //constructor
 
@@ -29,23 +32,42 @@ class Drinks extends Component {
       .catch((err) => {
         console.log(err);
       });
-  } //component
+  } //componentWillMount
   render() {
     return (
       <div>
-        <ul>
-          {this.state.data.map((item) => (
-            <>
-              <li key={item}>{item.strDrink}</li>
-              <img src={item.strDrinkThumb} />
-              <Button variant="primary">INFO</Button>{" "}
-              <Button variant="danger">INGREDIENTS</Button>{" "}
-            </>
-          ))}
-        </ul>
+        <form>
+          <input type="text" onChange={this.searchName}></input>
+         
+        </form>
+        <Modal/>
+        {this.state.data.map((item) => (
+          <>
+            <div key={item} >{item.strDrink}</div>
+            <img src={item.strDrinkThumb} />
+            <Button variant="primary">INFO</Button>{" "}
+            <Button variant="danger" onClick= {e => {this.showModal(item.strInstructions)}}>INSTRUCTIONS</Button>{" "}
+          </>
+        ))}
       </div>
     ); //return
   } //render
+
+  searchName = (e) => {
+    e.preventDefault();
+    console.log(this.state.search);
+    console.log(this.state.data);
+    let filteredDrinks = this.state.data.filter((name) =>
+      name.strDrink.toLowerCase().includes(e.target.value.toLowerCase())
+    );
+  }; //searchName
+
+showModal = (e) => {
+console.dir(e)
+let info = this.state.data.strInstructions
+document.querySelector('.pop-up').innerHTML = e;
+this.setState({clicked: !this.state.clicked})
+}
 } //component
 
 export default Drinks;
