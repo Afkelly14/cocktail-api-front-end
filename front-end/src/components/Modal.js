@@ -29,6 +29,7 @@ class Modal extends Component {
           className="close"
           onClick={(e) => {
             document.querySelector(".box").style.opacity = 0;
+            // document.querySelector(".close").style.opacity = 1;
           }}
         >
           X

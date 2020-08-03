@@ -42,92 +42,80 @@ class Drinks extends Component {
       });
   } //componentWillMount
   render() {
-    let list = this.state.data.map(item => {
-   
-    return (
-      <div className = "container">
-       
-        
+    let list = this.state.data.map((item) => {
+      return (
+        <div className="container">
           <>
             <div key={item}>{item.strDrink}</div>
             <img src={item.strDrinkThumb} />
             <div className="button-class">
-            <Button
-              variant="danger"
-              onClick={(e) => {
-                this.remove(item.strDrink);
-              }}
-            >
-              DELETE
-            </Button>{" "}
-            <Button
-              variant="info"
-              onClick={(e) => {
-                this.showModal(item.strInstructions);
-              }}
-            >
-              INSTRUCTIONS
-            </Button>{" "}
-            <Link to={"/drinks/update/" + item.strDrink}>
-            <Button
-              variant="outline-secondary"
-              onClick={(e) => {
-                this.update(item);
-              }}
-            >
-              UPDATE
-            </Button>{" "}
-            
-            </Link>
+              <Button
+                variant="danger"
+                onClick={(e) => {
+                  this.remove(item.strDrink);
+                }}
+              >
+                DELETE
+              </Button>{" "}
+              <Button
+                variant="info"
+                onClick={(e) => {
+                  this.showModal(item.strInstructions);
+                }}
+              >
+                INSTRUCTIONS
+              </Button>{" "}
+              <Link to={"/drinks/update/" + item.strDrink}>
+                <Button
+                  variant="outline-secondary"
+                  onClick={(e) => {
+                    this.update(item);
+                  }}
+                >
+                  UPDATE
+                </Button>{" "}
+              </Link>
             </div>
           </>
-          
-      </div>
-    ); //return
-  })//map
-return (
-(<React.Fragment>
-<Modal />
-<div className="list">{list}</div>
-</React.Fragment>
-)  
-)
-} //render
-
-  searchName = (e) => {
-    e.preventDefault();
-    console.log(this.state.search);
-    console.log(this.state.data);
-    let filteredDrinks = this.state.data.filter((name) =>
-      name.strDrink.toLowerCase().includes(e.target.value.toLowerCase())
+        </div>
+      ); //return
+    }); //map
+    return (
+      <React.Fragment>
+        <Modal />
+        <div className="list">{list}</div>
+      </React.Fragment>
     );
-  }; //searchName
+  } //render
+
 
   showModal = (e) => {
     console.dir(e);
     let info = this.state.data.strInstructions;
     document.querySelector(".instructions").innerHTML = e;
-    document.querySelector(".box").style.opacity = 0.75;
+    document.querySelector(".box").style.opacity = 1;
+    document.querySelector('.close').style.opacity = 1;
     this.setState({ clicked: !this.state.clicked });
-  };//showModal
+  }; //showModal
 
   remove(strDrink) {
     fetch(url + "/" + strDrink, optionDELETE)
       .then(() => {
         console.log("removed");
-        this.setState({ data: this.state.data.filter(item => {
-        return item.strDrink !== strDrink
-      })})
+        this.setState({
+          data: this.state.data.filter((item) => {
+            return item.strDrink !== strDrink;
+          }),
+        });
       })
       .catch((err) => {
         console.log(err);
       });
-      
-  }//remove
+  } //remove
 
   update(item) {
     console.log("update works");
   }
- } //component
+} //component
 
 export default Drinks;
