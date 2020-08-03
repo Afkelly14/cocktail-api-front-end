@@ -14,7 +14,7 @@
 .list {
   margin: 0px 80px;
   display: flex;
-  flex-wrap: wrap;
+  flex-flow: row wrap;
 }
 
 .button-class {
@@ -35,12 +35,9 @@ button a {
 }
 
 .container {
-  display: grid;
-  flex-direction: row;
-  width: 25px;
+  max-width: 300px !important;
   margin: 20px 60px 0px 60px;
   padding: 40px 300px;
-  align-items: center;
   font-weight: bold;
 }
 
