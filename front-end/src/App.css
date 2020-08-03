@@ -1,20 +1,20 @@
 * {
-  background-color: pink;
+  background-color: rgb(245, 137, 196);
 }
-.close{
+
+.close {
   right: 75%;
   width: 25px;
-  opacity: 0;
+  opacity: 1;
   height: 25px;
   color: blue;
   border: black 2px solid;
 }
 
-
 .list {
   margin: 0px 80px;
   display: flex;
-  flex-flow: row wrap;
+  flex-wrap: wrap;
 }
 
 .button-class {
@@ -27,16 +27,17 @@ button a {
   width: fit-content;
 }
 
-
-div {
-  font-size: 25px;
-  display: grid;
+.name {
+  font-size: 40px;
+  color: white;
+  justify-content: center;
+  text-align: center;
 }
 
 .container {
   display: grid;
   flex-direction: row;
-  /* width: 50px; */
+  width: 25px;
   margin: 20px 60px 0px 60px;
   padding: 40px 300px;
   align-items: center;
@@ -45,24 +46,48 @@ div {
 
 .box {
   background-image: transparent;
-  color: black;
+  color: yellow;
   margin: 10px 70px;
   font-weight: bold;
-  padding: 0px 60px;
+  padding: 0px 70px;
   height: 80px;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
 }
 
 header {
   padding-top: 30px;
-  color: #0074d9;
+  color: white;
   text-align: center;
 }
 
 img {
-  height: 300px;
-  width: 300px;
-  margin-bottom: 25px;
+  height: 200px;
+  width: 200px;
+  margin: 0px 0px 25px 40px;
   box-shadow: 10px 10px 5px grey;
+}
+
+.delete {
+  background-color: black;
+  color: white;
+  border: black solid 1px;
+  border-radius: 7px;
+  padding: 7px;
+}
+
+.binstructions {
+  background-color: green;
+  color: white;
+  border: green solid 1px;
+  border-radius: 7px;
+  padding: 7px;
+}
+
+.update {
+  background-color: rgb(137, 159, 245);
+  color: white;
+  border: rgb(137, 159, 245) solid 1px;
+  border-radius: 7px;
+  padding: 7px;
 }

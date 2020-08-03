@@ -40,8 +40,7 @@ class Update extends Component {
     console.log(this.props.match.params.name);
     console.log(url + "/name/" + this.props.match.params.name);
     const formData = {
-        "strInstructions": document.querySelector("input").value,
-
+        "strInstructions": document.querySelector("input").value
     }
    
     console.log(formData);

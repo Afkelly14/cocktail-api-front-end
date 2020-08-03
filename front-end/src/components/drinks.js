@@ -3,7 +3,7 @@ import App from "../App";
 import Modal from "./Modal";
 import { Link } from "react-router-dom";
 
-import Button from "react-bootstrap/Button";
+// import Button from "react-bootstrap/Button";
 
 let url = "https://find-a-cocktail.herokuapp.com/drinks";
 
@@ -46,34 +46,34 @@ class Drinks extends Component {
       return (
         <div className="container">
           <>
-            <div key={item}>{item.strDrink}</div>
+            <div className="name" key={item}>{item.strDrink}</div>
             <img src={item.strDrinkThumb} />
             <div className="button-class">
-              <Button
-                variant="danger"
+              <button
+                className='delete'
                 onClick={(e) => {
                   this.remove(item.strDrink);
                 }}
               >
                 DELETE
-              </Button>{" "}
-              <Button
-                variant="info"
+              </button>{" "}
+              <button
+                className='binstructions'
                 onClick={(e) => {
                   this.showModal(item.strInstructions);
                 }}
               >
                 INSTRUCTIONS
-              </Button>{" "}
+              </button>{" "}
               <Link to={"/drinks/update/" + item.strDrink}>
-                <Button
-                  variant="outline-secondary"
+                <button
+                  className='update'
                   onClick={(e) => {
                     this.update(item);
                   }}
                 >
                   UPDATE
-                </Button>{" "}
+                </button>{" "}
               </Link>
             </div>
           </>
