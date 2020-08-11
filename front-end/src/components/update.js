@@ -40,22 +40,21 @@ class Update extends Component {
     console.log(this.props.match.params.name);
     console.log(url + "/name/" + this.props.match.params.name);
     const formData = {
-        "strInstructions": document.querySelector("input").value
-    }
-   
+      strInstructions: document.querySelector("input").value,
+    };
+
     console.log(formData);
-   
+
     const optionPUT = {
-      "method": "PUT",
-      "headers": {
+      method: "PUT",
+      headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(formData),
     };
     fetch(url + "/name/edit/" + this.props.match.params.name, optionPUT)
-      .then((res)=> res.json())
-      .then((data) =>
-      console.log(data))
+      .then((res) => res.json())
+      .then((data) => console.log(data))
       .catch((err) => {
         console.log(err);
       });

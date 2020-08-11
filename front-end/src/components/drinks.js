@@ -46,11 +46,13 @@ class Drinks extends Component {
       return (
         <div className="container">
           <>
-            <div className="name" key={item}>{item.strDrink}</div>
+            <div className="name" key={item}>
+              {item.strDrink}
+            </div>
             <img src={item.strDrinkThumb} />
             <div className="button-class">
               <button
-                className='delete'
+                className="delete"
                 onClick={(e) => {
                   this.remove(item.strDrink);
                 }}
@@ -58,7 +60,7 @@ class Drinks extends Component {
                 DELETE
               </button>{" "}
               <button
-                className='binstructions'
+                className="binstructions"
                 onClick={(e) => {
                   this.showModal(item.strInstructions);
                 }}
@@ -67,7 +69,7 @@ class Drinks extends Component {
               </button>{" "}
               <Link to={"/drinks/update/" + item.strDrink}>
                 <button
-                  className='update'
+                  className="update"
                   onClick={(e) => {
                     this.update(item);
                   }}
@@ -88,13 +90,12 @@ class Drinks extends Component {
     );
   } //render
 
-
   showModal = (e) => {
     console.dir(e);
     let info = this.state.data.strInstructions;
     document.querySelector(".instructions").innerHTML = e;
     document.querySelector(".box").style.opacity = 1;
-    document.querySelector('.close').style.opacity = 1;
+    document.querySelector(".close").style.opacity = 1;
     this.setState({ clicked: !this.state.clicked });
   }; //showModal
 
