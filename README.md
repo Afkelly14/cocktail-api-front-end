@@ -10,8 +10,8 @@ the ability to search by ID, name, ingredient and the type of glass. We will als
 
 ## Routes
 
-- Name: find a drink by its specified name. Route is (/)
-- Edit
+- /drinks = home page route
+- /drinks/update/:drink -  to update a drink
 
 ## Issues
 
