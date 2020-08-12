@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import App from "../App";
 import Modal from "./Modal";
 
-import Button from "react-bootstrap/Button";
+// import Button from "react-bootstrap/Button";
 
 let url = "https://find-a-cocktail.herokuapp.com/drinks";
 
