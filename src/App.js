@@ -3,6 +3,7 @@ import { Route, Link, Switch } from "react-router-dom";
 import "./App.css";
 import Drinks from "./components/drinks";
 import Update from "./components/update";
+import New from "./components/new";
 
 //link the API from heroku
 let url = "https://find-a-cocktail.herokuapp.com/drinks";
@@ -53,11 +54,13 @@ class App extends Component {
       <div>
         <header>
           <nav>
-            <h1>Life's A Sport - Drink It Up!</h1>
+            <Link to='/drinks'>
+            <h1>Life's A Sport - Drink It Up!</h1></Link>
           </nav>
         </header>
         <main>
           <Route path="/drinks/" exact component={Drinks} />
+          <Route path="/drinks/new" exact component={New} />
           <Route path="/drinks/update/:name" render={(routerProps) => (
             <Update {...routerProps}></Update>
           )} />

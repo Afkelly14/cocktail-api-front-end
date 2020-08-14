@@ -88,3 +88,28 @@ img {
   border-radius: 7px;
   padding: 7px;
 }
+
+.create {
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  font-size: 25px;
+  font-weight: bold;
+  background-color: darkcyan;
+  border-radius: 10px;
+  box-shadow: rgb(58, 57, 57) 15px 10px 10px;
+}
+
+.create-div {
+  display: flex;
+  justify-content: center;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1 {
+  font-size: 45px;
+  font-style: italic;
+}

@@ -85,6 +85,10 @@ class Drinks extends Component {
     return (
       <React.Fragment>
         <Modal />
+        <Link to="/drinks/new">
+          <div className='create-div'>
+        <button className="create">Click here to create a new drink!</button></div></Link>
+       
         <div className="list">{list}</div>
       </React.Fragment>
     );
