@@ -4,6 +4,9 @@ import "./App.css";
 import Drinks from "./components/drinks";
 import Update from "./components/update";
 import New from "./components/new";
+// import Icon from "icon.png";
+
+// import { Button } from 'reactstrap';
 
 //link the API from heroku
 let url = "https://find-a-cocktail.herokuapp.com/drinks";
@@ -47,23 +50,26 @@ class App extends Component {
       ingredient: String,
       search: "words",
     };
-    
   }
   render() {
     return (
       <div>
         <header>
           <nav>
-            <Link to='/drinks'>
-            <h1>Life's A Sport - Drink It Up!</h1></Link>
+            <Link to="/drinks">
+              <h1>Pick Your Poison....</h1>
+              </Link>
+    <p>Welcome to <strong>The Cocktail Database!</strong> Below is a list of drinks with instructions.<br /> <br />If you are feeling creative, add your own!</p>
+            
           </nav>
         </header>
         <main>
           <Route path="/drinks/" exact component={Drinks} />
           <Route path="/drinks/new" exact component={New} />
-          <Route path="/drinks/update/:name" render={(routerProps) => (
-            <Update {...routerProps}></Update>
-          )} />
+          <Route
+            path="/drinks/update/:name"
+            render={(routerProps) => <Update {...routerProps}></Update>}
+          />
         </main>
       </div>
     ); //return

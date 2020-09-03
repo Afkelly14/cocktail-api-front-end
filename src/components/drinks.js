@@ -44,7 +44,7 @@ class Drinks extends Component {
   render() {
     let list = this.state.data.map((item) => {
       return (
-        <div className="container">
+        <div className="drinklayout">
           <>
             <div className="name" key={item}>
               {item.strDrink}
@@ -52,7 +52,7 @@ class Drinks extends Component {
             <img src={item.strDrinkThumb} />
             <div className="button-class">
               <button
-                className="delete"
+                className="btn-delete"
                 onClick={(e) => {
                   this.remove(item.strDrink);
                 }}
@@ -60,7 +60,7 @@ class Drinks extends Component {
                 DELETE
               </button>{" "}
               <button
-                className="binstructions"
+                className="btn-instructions"
                 onClick={(e) => {
                   this.showModal(item.strInstructions);
                 }}
@@ -69,7 +69,7 @@ class Drinks extends Component {
               </button>{" "}
               <Link to={"/drinks/update/" + item.strDrink}>
                 <button
-                  className="update"
+                  className="btn-update"
                   onClick={(e) => {
                     this.update(item);
                   }}

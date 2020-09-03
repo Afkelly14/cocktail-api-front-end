@@ -1,5 +1,8 @@
+/* font-family: 'IM Fell English', serif;
+font-family: 'Mitr', sans-serif; */
+
 * {
-  background-color: rgb(245, 137, 196);
+  background-color: white;
 }
 
 .close {
@@ -7,14 +10,15 @@
   width: 25px;
   opacity: 1;
   height: 25px;
-  color: blue;
+
   border: black 2px solid;
 }
 
 .list {
-  margin: 0px 80px;
+  margin: 0px 60px;
   display: flex;
   flex-flow: row wrap;
+  justify-content: center;
 }
 
 .button-class {
@@ -28,24 +32,25 @@ button a {
 }
 
 .name {
-  font-size: 40px;
-  color: white;
+  font-size: 30px;
+  color: black;
+  font-weight: 200;
+  font-family: "Mitr", sans-serif;
   justify-content: center;
   text-align: center;
 }
 
-.container {
-  max-width: 300px !important;
-  margin: 20px 60px 0px 60px;
-  padding: 40px 300px;
-  font-weight: bold;
+.drinklayout {
+  margin: 3%;
 }
 
 .box {
   background-image: transparent;
-  color: yellow;
+  color: black;
+  font-family: "Mitr, sans-serif";
   margin: 10px 70px;
-  font-weight: bold;
+  font-size: 25px;
+  font-weight: 400;
   padding: 0px 70px;
   height: 80px;
   display: flex;
@@ -54,62 +59,87 @@ button a {
 
 header {
   padding-top: 30px;
-  color: white;
+  color: black;
   text-align: center;
 }
 
 img {
   height: 200px;
   width: 200px;
-  margin: 0px 0px 25px 40px;
-  box-shadow: 10px 10px 5px grey;
+  margin: 6% 15%;
 }
 
-.delete {
+.btn-delete {
+  color: black;
+  border: black solid 2px;
+  padding: 7px;
+}
+
+.btn-delete:hover {
   background-color: black;
   color: white;
-  border: black solid 1px;
-  border-radius: 7px;
+}
+
+.btn-instructions {
+  color: black;
+  border: green solid 2px;
   padding: 7px;
 }
 
-.binstructions {
+.btn-instructions:hover {
   background-color: green;
   color: white;
-  border: green solid 1px;
-  border-radius: 7px;
+}
+
+.btn-update {
+  color: black;
+  border: rgb(137, 159, 245) solid 2px;
+
   padding: 7px;
 }
 
-.update {
+.btn-update:hover {
   background-color: rgb(137, 159, 245);
   color: white;
-  border: rgb(137, 159, 245) solid 1px;
-  border-radius: 7px;
-  padding: 7px;
 }
 
 .create {
-  border: none;
-  color: white;
+  border: rgb(95, 96, 99) solid 2px;
+  color: black;
   padding: 10px 20px;
   font-size: 25px;
   font-weight: bold;
-  background-color: darkcyan;
-  border-radius: 10px;
+  border-radius: 2px;
   box-shadow: rgb(58, 57, 57) 15px 10px 10px;
 }
+
+.create:hover {
+  background-color: black;
+  color: white;
+}
+
 
 .create-div {
   display: flex;
   justify-content: center;
+  margin-bottom: 10%;
 }
 
-a {
-  text-decoration: none;
-}
 
 h1 {
-  font-size: 45px;
-  font-style: italic;
+  color: black;
+  font-size: 105px;
+  font-weight: 600;
+  font-family: "Mitr", sans-serif;
+
+  padding: 40px 0px;
+}
+
+a:hover a:visited a:link a:active {
+  text-decoration: none !important;
+}
+
+p {
+  font-size: 18px;
+padding-bottom: 3%;
 }
