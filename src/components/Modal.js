@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import App from "../App";
+import PopUp from "reactjs-popup"
 
 // import Button from "react-bootstrap/Button";
 import { render } from "react-dom";
@@ -23,17 +24,18 @@ class Modal extends Component {
 
   render() {
     return (
-      <div className="box">
-        <div className="instructions"></div>
-        <button
-          className="close"
-          onClick={(e) => {
-            document.querySelector(".box").style.opacity = 0;
-          }}
-        >
-          X
-        </button>
-      </div>
+      // <div className="box">
+      //   <div className="instructions"></div>
+      //   <button
+      //     className="close"
+      //     onClick={(e) => {
+      //       document.querySelector(".box").style.opacity = 0;
+      //     }}
+      //   >
+      //     X
+      //   </button>
+      // </div>
+     <div></div>
     ); //return
   } //render</div>
 } //component

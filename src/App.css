@@ -6,12 +6,10 @@ font-family: 'Mitr', sans-serif; */
 }
 
 .close {
-  right: 75%;
-  width: 25px;
+  right: 85%;
+  width: 45px;
   opacity: 1;
-  height: 25px;
-
-  border: black 2px solid;
+  height: 20px;
 }
 
 .list {
@@ -44,17 +42,23 @@ button a {
   margin: 3%;
 }
 
-.box {
-  background-image: transparent;
+.popup-content {
+  background-color: white;
   color: black;
-  font-family: "Mitr, sans-serif";
-  margin: 10px 70px;
-  font-size: 25px;
-  font-weight: 400;
-  padding: 0px 70px;
-  height: 80px;
-  display: flex;
+  font-family: "Mitr", sans-serif;
+  font-size: 15px;
+  font-weight: 300;
+  height: 300px;
+  width: 100%;
+  /* display: flex; */
   justify-content: center;
+  text-align: center;
+  /* z-index: 0.5; */
+}
+
+.closemodal {
+  color: black;
+  display: block;
 }
 
 header {
@@ -84,6 +88,7 @@ img {
   color: black;
   border: green solid 2px;
   padding: 7px;
+  margin: 0% 2%;
 }
 
 .btn-instructions:hover {
@@ -118,13 +123,11 @@ img {
   color: white;
 }
 
-
 .create-div {
   display: flex;
   justify-content: center;
   margin-bottom: 10%;
 }
-
 
 h1 {
   color: black;
@@ -141,5 +144,21 @@ a:hover a:visited a:link a:active {
 
 p {
   font-size: 18px;
-padding-bottom: 3%;
+  padding-bottom: 3%;
+}
+
+form {
+  padding: 10% 0% 0% 30%;
+}
+
+input {
+  width: 40%;
+  border: black solid 1px;
+}
+
+.submit-btn {
+  width: 15%;
+  background-color: black;
+  color: white;
+  border: solid black 1px;
 }

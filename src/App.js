@@ -56,7 +56,7 @@ class App extends Component {
       <div>
         <header>
           <nav>
-            <Link to="/drinks">
+            <Link to="/">
               <h1>Pick Your Poison....</h1>
               </Link>
     <p>Welcome to <strong>The Cocktail Database!</strong> Below is a list of drinks with instructions.<br /> <br />If you are feeling creative, add your own!</p>
@@ -64,10 +64,10 @@ class App extends Component {
           </nav>
         </header>
         <main>
-          <Route path="/drinks/" exact component={Drinks} />
-          <Route path="/drinks/new" exact component={New} />
+          <Route path="/" exact component={Drinks} />
+          <Route path="/new" exact component={New} />
           <Route
-            path="/drinks/update/:name"
+            path="/update/:name"
             render={(routerProps) => <Update {...routerProps}></Update>}
           />
         </main>

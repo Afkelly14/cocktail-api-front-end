@@ -21,10 +21,10 @@ class Update extends Component {
           <input
             type="text"
             id="instructions"
-            placeholder="update instructions"
+            placeholder="Update Instructions Here..."
           ></input>
 
-          <input
+          <input className="submit-btn"
             type="submit"
             id="submit"
             placeholder="submit changes here"

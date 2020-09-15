@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import App from "../App";
-import Modal from "./Modal";
+import Modal from "reactjs-popup";
 import { Link } from "react-router-dom";
+import Popup from "reactjs-popup";
 
 // import Button from "react-bootstrap/Button";
 
@@ -59,14 +60,56 @@ class Drinks extends Component {
               >
                 DELETE
               </button>{" "}
-              <button
+              {/* <button
                 className="btn-instructions"
                 onClick={(e) => {
                   this.showModal(item.strInstructions);
                 }}
               >
                 INSTRUCTIONS
-              </button>{" "}
+              </button>{" "} */}
+              <Popup
+                trigger={
+                  <button className="btn-instructions"> INSTRUCTIONS </button>
+                }
+                modal
+                nested
+              >
+                {(close) => (
+                  <React.Fragment>
+                  <div className="modal">
+                  <div className="popup-content">
+                
+                 
+                  
+                <div className="header">{item.strDrink}</div>
+                    
+                      
+                      
+                      </div>
+                      {console.log(item.strInstructions)}
+                    </div>
+                    
+                    {/* <button
+                      className="closemodal"
+                      onClick={() => {
+                        console.log("modal closed ");
+                        close();
+                      }}
+                    >
+                      Close
+                    </button> */}
+                    </React.Fragment>
+                    
+                    
+                )}
+                <div>
+                    <h1>{item.strDrink}</h1>
+                    
+                      <p>{item.strInstructions}</p>
+                      
+                    </div>
+              </Popup>
               <Link to={"/drinks/update/" + item.strDrink}>
                 <button
                   className="btn-update"
@@ -86,9 +129,13 @@ class Drinks extends Component {
       <React.Fragment>
         <Modal />
         <Link to="/drinks/new">
-          <div className='create-div'>
-        <button className="create">Click here to create a new drink!</button></div></Link>
-       
+          <div className="create-div">
+            <button className="create">
+              Click here to create a new drink!
+            </button>
+          </div>
+        </Link>
+
         <div className="list">{list}</div>
       </React.Fragment>
     );
