@@ -77,19 +77,13 @@ class Drinks extends Component {
               >
                 {(close) => (
                   <React.Fragment>
-                  <div className="modal">
-                  <div className="popup-content">
-                
-                 
-                  
-                <div className="header">{item.strDrink}</div>
-                    
-                      
-                      
+                    <div className="modal">
+                      <div className="popup-content">
+                        
                       </div>
                       {console.log(item.strInstructions)}
                     </div>
-                    
+
                     {/* <button
                       className="closemodal"
                       onClick={() => {
@@ -99,16 +93,13 @@ class Drinks extends Component {
                     >
                       Close
                     </button> */}
-                    </React.Fragment>
-                    
-                    
+                  </React.Fragment>
                 )}
                 <div>
-                    <h1>{item.strDrink}</h1>
-                    
-                      <p>{item.strInstructions}</p>
-                      
-                    </div>
+                  <h1>{item.strDrink}</h1>
+
+                  <p>{item.strInstructions}</p>
+                </div>
               </Popup>
               <Link to={"/drinks/update/" + item.strDrink}>
                 <button
@@ -127,7 +118,6 @@ class Drinks extends Component {
     }); //map
     return (
       <React.Fragment>
-        <Modal />
         <Link to="/drinks/new">
           <div className="create-div">
             <button className="create">

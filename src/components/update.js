@@ -11,12 +11,13 @@ class Update extends Component {
     super();
     this.state = {
       strInstructions: "",
-      strDrinkThumb: "",
+      
     }; //state
   } //constructor
   render() {
     return (
       <div>
+       
         <form onSubmit={this.update}>
           <input
             type="text"
@@ -30,6 +31,7 @@ class Update extends Component {
             placeholder="submit changes here"
           ></input>
         </form>
+      
       </div>
     ); //return
   } //render

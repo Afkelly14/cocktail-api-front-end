@@ -64,12 +64,16 @@ class App extends Component {
           </nav>
         </header>
         <main>
+          <Switch>
+        <Route path="/drinks/new"  component={New} />
           <Route path="/" exact component={Drinks} />
-          <Route path="/new" exact component={New} />
+          
+          
           <Route
-            path="/update/:name"
+            path="/drinks/update/:name"
             render={(routerProps) => <Update {...routerProps}></Update>}
           />
+          </Switch>
         </main>
       </div>
     ); //return

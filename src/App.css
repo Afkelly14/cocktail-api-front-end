@@ -148,6 +148,7 @@ p {
 }
 
 form {
+  
   padding: 10% 0% 0% 30%;
 }
 
@@ -159,6 +160,6 @@ input {
 .submit-btn {
   width: 15%;
   background-color: black;
-  color: white;
+  color: yellow;
   border: solid black 1px;
 }
