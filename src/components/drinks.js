@@ -60,14 +60,6 @@ class Drinks extends Component {
               >
                 DELETE
               </button>{" "}
-              {/* <button
-                className="btn-instructions"
-                onClick={(e) => {
-                  this.showModal(item.strInstructions);
-                }}
-              >
-                INSTRUCTIONS
-              </button>{" "} */}
               <Popup
                 trigger={
                   <button className="btn-instructions"> INSTRUCTIONS </button>
@@ -78,26 +70,22 @@ class Drinks extends Component {
                 {(close) => (
                   <React.Fragment>
                     <div className="modal">
-                      <div className="popup-content">
-                        
-                      </div>
-                      {console.log(item.strInstructions)}
+                      
                     </div>
-
-                    {/* <button
-                      className="closemodal"
-                      onClick={() => {
-                        console.log("modal closed ");
-                        close();
-                      }}
-                    >
-                      Close
-                    </button> */}
                   </React.Fragment>
                 )}
-                <div>
-                  <h1>{item.strDrink}</h1>
-
+                <div className="popup-content">
+                  <h1 className="drink-name">{item.strDrink}</h1>
+                  <p className="glass">Glass: {item.strGlass}</p>
+                  <p className="ingredients">Ingredients:
+                    <ul>
+                      <li>{item.strIngredient1}</li>
+                      <li>{item.strIngredient2}</li>
+                      <li>{item.strIngredient3}</li>
+                      <li>{item.strIngredient4}</li>
+                      <li>{item.strIngredient5}</li>
+                    </ul>
+                  </p>
                   <p>{item.strInstructions}</p>
                 </div>
               </Popup>

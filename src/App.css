@@ -41,7 +41,7 @@ button a {
 .drinklayout {
   margin: 3%;
 }
-
+/* 
 .popup-content {
   background-color: white;
   color: black;
@@ -50,15 +50,23 @@ button a {
   font-weight: 300;
   height: 300px;
   width: 100%;
-  /* display: flex; */
-  justify-content: center;
   text-align: center;
-  /* z-index: 0.5; */
+} */
+
+.popup-content {
+  text-align: left;
+  margin-left: 10%;
+  margin-right: 5%;
+}
+
+.drink-name {
+  text-align: center;
 }
 
 .closemodal {
   color: black;
   display: block;
+  z-index: 99;
 }
 
 header {
@@ -148,7 +156,6 @@ p {
 }
 
 form {
-  
   padding: 10% 0% 0% 30%;
 }
 
@@ -162,4 +169,8 @@ input {
   background-color: black;
   color: yellow;
   border: solid black 1px;
+}
+
+.glass {
+  
 }
