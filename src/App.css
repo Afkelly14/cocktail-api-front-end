@@ -153,8 +153,11 @@ a:hover a:visited a:link a:active {
 p {
   font-size: 18px;
   padding-bottom: 3%;
+  
 }
-
+.intructions {
+  text-align: center;
+}
 form {
   padding: 10% 0% 0% 30%;
 }
@@ -171,6 +174,3 @@ input {
   border: solid black 1px;
 }
 
-.glass {
-  
-}

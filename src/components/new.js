@@ -10,8 +10,16 @@ class New extends Component {
   constructor() {
     super();
     this.state = {
-      strDrink: ""
+      strDrink: "",
+      strGlass: "",
+      strIngredient1: "",
+      strIngredient2: "",
+      strIngredient3: "",
+      strIngredient4: "",
+      strIngredient5: ""
     }; //state
+    this.handleChange = this.handleChange.bind(this);
+		this.handleSubmit = this.handleSubmit.bind(this);
   } //constructor
   render() {
     return (
@@ -20,9 +28,9 @@ class New extends Component {
           <input
             type="text"
             id="name"
-            placeholder="Add Drink Name"
+            placeholder="What is the drink named?"
           ></input>
-
+          
           <input
             type="submit"
             id="submit"
@@ -37,6 +45,7 @@ class New extends Component {
     e.preventDefault();
     const formData = {
       strDrink: document.querySelector("input").value,
+      strGlass: document.querySelector("input").value,
     };
     const optionPOST = {
       method: "POST",

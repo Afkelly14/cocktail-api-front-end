@@ -76,8 +76,8 @@ class Drinks extends Component {
                 )}
                 <div className="popup-content">
                   <h1 className="drink-name">{item.strDrink}</h1>
-                  <p className="glass">Glass: {item.strGlass}</p>
-                  <p className="ingredients">Ingredients:
+                  <p><strong>Glass:</strong> {item.strGlass}</p>
+                  <p className="ingredients"><strong>Ingredients:</strong>
                     <ul>
                       <li>{item.strIngredient1}</li>
                       <li>{item.strIngredient2}</li>
@@ -86,7 +86,7 @@ class Drinks extends Component {
                       <li>{item.strIngredient5}</li>
                     </ul>
                   </p>
-                  <p>{item.strInstructions}</p>
+                  <p className="intructions">{item.strInstructions}</p>
                 </div>
               </Popup>
               <Link to={"/drinks/update/" + item.strDrink}>
