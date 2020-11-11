@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import App from "../App";
-import Modal from "./Modal";
+// import Modal from "./Modal";
 
 // import Button from "react-bootstrap/Button";
 
@@ -10,7 +10,7 @@ class Update extends Component {
   constructor() {
     super();
     this.state = {
-      strInstructions: "",
+      strInstructions: ""
       
     }; //state
   } //constructor

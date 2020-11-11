@@ -24,20 +24,10 @@ class Modal extends Component {
 
   render() {
     return (
-      // <div className="box">
-      //   <div className="instructions"></div>
-      //   <button
-      //     className="close"
-      //     onClick={(e) => {
-      //       document.querySelector(".box").style.opacity = 0;
-      //     }}
-      //   >
-      //     X
-      //   </button>
-      // </div>
+    
      <div></div>
     ); //return
-  } //render</div>
+  } //render
 } //component
 
 export default Modal;

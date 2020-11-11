@@ -41,17 +41,6 @@ button a {
 .drinklayout {
   margin: 3%;
 }
-/* 
-.popup-content {
-  background-color: white;
-  color: black;
-  font-family: "Mitr", sans-serif;
-  font-size: 15px;
-  font-weight: 300;
-  height: 300px;
-  width: 100%;
-  text-align: center;
-} */
 
 .popup-content {
   text-align: left;
@@ -63,11 +52,11 @@ button a {
   text-align: center;
 }
 
-.closemodal {
+/* .closemodal {
   color: black;
   display: block;
   z-index: 99;
-}
+} */
 
 header {
   padding-top: 30px;
@@ -107,7 +96,6 @@ img {
 .btn-update {
   color: black;
   border: rgb(137, 159, 245) solid 2px;
-
   padding: 7px;
 }
 
@@ -142,7 +130,6 @@ h1 {
   font-size: 105px;
   font-weight: 600;
   font-family: "Mitr", sans-serif;
-
   padding: 40px 0px;
 }
 
@@ -155,8 +142,9 @@ p {
   padding-bottom: 3%;
   
 }
-.intructions {
-  text-align: center;
+.instructions {
+  text-align: left;
+  margin-bottom: 5%;
 }
 form {
   padding: 10% 0% 0% 30%;

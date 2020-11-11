@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import App from "../App";
-import Modal from "reactjs-popup";
+
 import { Link } from "react-router-dom";
 import Popup from "reactjs-popup";
 
@@ -76,7 +76,7 @@ class Drinks extends Component {
                 )}
                 <div className="popup-content">
                   <h1 className="drink-name">{item.strDrink}</h1>
-                  <p><strong>Glass:</strong> {item.strGlass}</p>
+                  <p><strong>Glass:  </strong> {item.strGlass}</p>
                   <p className="ingredients"><strong>Ingredients:</strong>
                     <ul>
                       <li>{item.strIngredient1}</li>
@@ -86,7 +86,9 @@ class Drinks extends Component {
                       <li>{item.strIngredient5}</li>
                     </ul>
                   </p>
-                  <p className="intructions">{item.strInstructions}</p>
+                  <p className="popup-content"><strong>Instructions: </strong></p>
+                  <div className="instructions">{item.strInstructions}</div>
+                  
                 </div>
               </Popup>
               <Link to={"/drinks/update/" + item.strDrink}>

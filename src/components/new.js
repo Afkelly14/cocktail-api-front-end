@@ -18,8 +18,8 @@ class New extends Component {
       strIngredient4: "",
       strIngredient5: ""
     }; //state
-    this.handleChange = this.handleChange.bind(this);
-		this.handleSubmit = this.handleSubmit.bind(this);
+    // this.handleChange = this.handleChange.bind(this);
+	// this.handleSubmit = this.handleSubmit.bind(this);
   } //constructor
   render() {
     return (
