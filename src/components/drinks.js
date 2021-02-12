@@ -44,6 +44,7 @@ class Drinks extends Component {
   } //componentWillMount
   render() {
     let list = this.state.data.map((item) => {
+      console.log(item);
       return (
         <div className="drinklayout">
           <>
@@ -55,7 +56,7 @@ class Drinks extends Component {
               <button
                 className="btn-delete"
                 onClick={(e) => {
-                  this.remove(item.strDrink);
+                  this.remove(item._id);
                 }}
               >
                 DELETE
@@ -130,13 +131,14 @@ class Drinks extends Component {
     this.setState({ clicked: !this.state.clicked });
   }; //showModal
 
-  remove(strDrink) {
-    fetch(url + "/" + strDrink, optionDELETE)
+  remove(_id) {
+    console.log(_id)
+    fetch(url + "/" + _id, optionDELETE)
       .then(() => {
         console.log("removed");
         this.setState({
           data: this.state.data.filter((item) => {
-            return item.strDrink !== strDrink;
+            return item._id !== _id;
           }),
         });
       })
